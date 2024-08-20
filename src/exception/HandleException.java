@@ -30,4 +30,5 @@ public class HandleException {
     public String inputString() {
         return scanner.nextLine();
     }
+
 }

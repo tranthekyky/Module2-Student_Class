@@ -5,6 +5,9 @@ import object.Student;
 import saveData.ReadAnhWriteData;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentManager implements IManager <Student, Clazz> {
     private ArrayList<Student> studentList;
@@ -126,6 +129,21 @@ public class StudentManager implements IManager <Student, Clazz> {
             sortByDescending.add(studentList.get(i));
         }
         return sortByDescending;
+    }
+
+    @Override
+    public ArrayList<Student> sortByNameA_Z() {
+        ArrayList<Student> sortByNameA_Z = new ArrayList<>();
+        sortByNameA_Z = studentList;
+        Collections.sort(sortByNameA_Z , new Comparator<Student>() {
+
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o2.getName().compareTo(o1.getName());
+            }
+        });
+
+    return sortByNameA_Z;
     }
 
     @Override

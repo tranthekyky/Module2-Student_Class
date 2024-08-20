@@ -1,5 +1,7 @@
 package manager;
 
+import object.Student;
+
 import java.util.ArrayList;
 
 public interface IManager <S, C>{
@@ -13,10 +15,12 @@ public interface IManager <S, C>{
     S getStudentMaxPoint() ;
     ArrayList<S> sortByAscending(); // Tang dan
     ArrayList<S> sortByDescending(); // Giam dan
+    ArrayList<Student> sortByNameA_Z() ;
     void showAllStudents();
     void displayAllClass() ;
     String getConduct (int choice) ;
     C getClass (int id) ;
+
 
 
 }

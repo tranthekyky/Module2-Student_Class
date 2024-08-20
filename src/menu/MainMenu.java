@@ -1,6 +1,7 @@
 package menu;
 
 import exception.HandleException;
+import exception.Regexx;
 import manager.StudentManager;
 import object.Student;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public class MainMenu {
     StudentManager studentManager = new StudentManager();
     HandleException handleException = new HandleException();
+    Regexx handleRegex = new Regexx();
     public void handleFunction() {
          int choice ;
         do {
@@ -72,7 +74,7 @@ public class MainMenu {
     public void functionAddStudent () {
         System.out.println("----- Add New Student -----");
         System.out.println("Enter student name : ");
-        String name = handleException.inputString();
+        String name = handleRegex.formatStringName();
         System.out.println("Enter Score : ");
         double score = handleException.inputNUmberDouble();
         System.out.println("Enter Gender :");
